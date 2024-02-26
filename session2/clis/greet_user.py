@@ -4,10 +4,11 @@ import argparse
 parser = argparse.ArgumentParser(description='Greet the user')
 
 # Add an argument
-parser.add_argument('name', type=str, help='Name of the user')
+parser.add_argument('number', type=int, help='number')
 
 # Parse the arguments
 args = parser.parse_args()
 
+
 # Print the greeting
-print(f'Hello, {args.name}!')
+print(args.number**2)
