@@ -9,8 +9,8 @@ output_array_path = sys.argv[2] # grab the second input
 
 # Load the input and standardize it
 input_array = np.load(input_array_path)
-output_array = (input_array - np.mean(input_array)) / np.std(input_array)
+output_array = (input_array) / np.abs(np.max(input_array) - np.min(input_array))
 path=pathlib.Path(output_array_path)
-os.mkdir(path.parent)
+#os.mkdir(path.parent)
 # Save the standardized array
 np.save(output_array_path, output_array)
